@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/game-over-icon.png"/> <!-- Updated game icon -->
+    <title>Flappy Fish</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="sounds effect/bgmsc.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="offline-error" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: black; color: white; padding: 20px; border: 2px solid red; border-radius: 5px; text-align: center;">
+        You are offline. Please check your internet connection.
+    </div>
+    <div class="background"></div>
+    <div class="modal" id="start-modal">
+        <div class="modal-content" style="background: url('assets/intro-bg.jpg') no-repeat center center; background-size: cover; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">
+            <h2>Welcome to Flappy Fish</h2>
+            <p style="font-size: 1.2em; margin-bottom: 20px;">Dive into the adventure and avoid the pipes!</p>
+            <div class="button-group">
+                <button class="start-button">Start Game</button>
+                <button class="mute-button" id="mute-button">Mute</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="game-over-modal" style="display: none;">
+        <div class="modal-content">
+            <img src="assets/game-over-icon.png" alt="Game Over Icon" style="width: 200px; height: 80px;"> <!-- Made the icon wider -->
+            <h2>Game Over</h2>
+            <p>Your Score: <span id="final-score">0</span></p>
+            <p>High Score: <span id="high-score">0</span></p>
+            <p style="font-style: italic; color: #ffe4b5;">"Don't give up! Try again and beat your high score!"</p> <!-- Added motivational message -->
+            <div class="button-group">
+                <button class="play-again-button">Play Again</button>
+                <button class="mute-button" id="mute-button-gameover">Mute</button>
+            </div>
+        </div>
+    </div>
+    <img src="assets/fish.gif" alt="isda-gif" class="isda" id="isda-1">
+    <div class="score">
+        <span class="score_title"></span>
+        <span class="score_val"></span>
+    </div>
+    <div class="high-score">
+        High Score: <span id="high-score-display">0</span>
+    </div>
+</body>
+</html>
